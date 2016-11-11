@@ -103,10 +103,11 @@ class Client extends \Pimple implements ClientInterface
         $values['challenge-solver-http'] = $this->share(function ($c) {
             return new \Octopuce\Acme\ChallengeSolver\Http($c['params']['challenge']['config']);
         });
-        /*
-        $values['challenge-solver-dns'] = $this->share(function () {
-            return new Octopuce\Acme\ChallengeSolver\Dns;
+
+        $values['challenge-solver-dns'] = $this->share(function ($c) {
+            return new \Octopuce\Acme\ChallengeSolver\Dns($c['params']['challenge']['config']);
         });
+        /*
         $values['challenge-solver-dvsni'] = $this->share(function () {
             return new Octopuce\Acme\ChallengeSolver\DvSni;
         });

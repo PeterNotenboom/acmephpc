@@ -10,26 +10,26 @@ $client = new \Octopuce\Acme\Client($config);
 // Make your calls !
 
 // Works but needed only if no default account in config
-// $client->newAccount('test107@sonntag.fr');
+// $client->newAccount('test107@nodeshot.com');
 
 // Works but needed only if no default account in config
-// $client->loadAccount('test107@sonntag.fr');
+// $client->loadAccount('test107@nodeshot.com');
 
 // Works
-// $client->newOwnership('sonntag.fr');
+$client->newOwnership('nodeshot.com');
 
 // Works
-// $client->getChallengeData('sonntag.fr');
-// $client->getChallengeData('sonntag.fr', 'http-01'); /// Can override challenge type for each call
+// $client->getChallengeData('nodeshot.com');
+$client->getChallengeData('nodeshot.com', 'dns'); /// Can override challenge type for each call
 
 // Works
-// $client->challengeOwnership('sonntag.fr');
+$client->challengeOwnership('nodeshot.com', 'dns');
 
 // Works
-// $client->signCertificate('sonntag.fr');
+//$client->signCertificate('nodeshot.com');
 
 // Works
-// $client->getCertificate('sonntag.fr');
+//$client->getCertificate('nodeshot.com');
 
 // Works
-// $client->revokeCertificate('sonntag.fr');
+// $client->revokeCertificate('nodeshot.com');
