@@ -71,7 +71,7 @@ class Dns implements SolverInterface
       $this->dns_record = '_acme-challenge.'.$fqdn;
       $this->authkeyhook = base64_encode(openssl_digest($token.'.'.$thumbprint, 'sha256', true));
       // urlbase64: base64 encoded string with '+' replaced with '-' and '/' replaced with '_'
-      $this->authkeyhook = str_replace(array('+', '/'), array('-', '_'), $authkeyhook);
+      $this->authkeyhook = str_replace(array('+', '/'), array('-', '_'), $this->authkeyhook);
 
       return array(
           'info' => sprintf('Create a TXT record %s with the value %s', $this->dns_record.'.', $this->authkeyhook),
